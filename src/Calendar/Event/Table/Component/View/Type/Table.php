@@ -1,4 +1,4 @@
-<?php namespace Websemantics\TimetableModule\Timetable\Timetable\Table\Component\View\Type;
+<?php namespace Websemantics\CalendarModule\Calendar\Event\Table\Component\View\Type;
 
 use Anomaly\Streams\Platform\Ui\Table\Component\View\Query\AllQuery;
 use Anomaly\Streams\Platform\Ui\Table\Component\View\View;
@@ -10,7 +10,7 @@ use Anomaly\Streams\Platform\Ui\Table\Component\View\View;
  * @link      http://ibuild.io
  * @author    WebSemantics, Inc. <info@websemantics.ca>
  * @author    Adnan M.Sagar, PhD. <adnan@websemantics.ca>
- * @package   Websemantics\TimetableModule\Timetable\Timetable\Table
+ * @package   Websemantics\CalendarModule\Calendar\Event\Table
  */
 
 class Table extends View
