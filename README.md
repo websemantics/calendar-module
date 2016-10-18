@@ -15,7 +15,7 @@
 
 ## Getting Started
 
-This module demonstrates a Calendar view for the [TableBuilder](http://pyrocms.com/documentation/streams-platform/v1.1#ui/tables). It is work in progress so expect things to change radically.
+The purpose of this Module is to demonstrate a new custom Calendar view for the [TableBuilder](http://pyrocms.com/documentation/streams-platform/v1.1#ui/tables). It is work in progress so expect things to change radically. This might also be re-written as an extension for better usability.
 
 To install,
 
