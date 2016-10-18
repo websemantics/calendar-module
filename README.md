@@ -6,10 +6,10 @@
 /   \_ |  _  ||     ||   [_ |  |  ||     ||  _  ||    \     |   |   ||     ||     ||  :  ||     ||   [_ 
 \     ||  |  ||     ||     ||  |  ||     ||  |  ||  .  \    |   |   ||     ||     ||     ||     ||     |
  \____||__|__||_____||_____||__|__||_____||__|__||__|\_|    |___|___| \___/ |_____| \__,_||_____||_____|
-  Calendar layout for PyroCMS 3 CP Table Builder                                                                         
+  Calendar layout for PyroCMS 3 CP Table Builder, v0.0.1                                                                    
 
 ```
-> Manage time or it will take over your life, yep! Fight back with timely organized events/actions nicely presented in a Calendar format.
+> Before there was time, man invented the Calendar. The idea was to preemptively manage time before it engulfs your life. The ability to make future plans, set events, reminders and take timely actions. A chance to fight back!. All of that, now made possible by the :calendar: Calendar Module.
 
 ![Calendar](https://github.com/websemantics/calendar-module/raw/master/docs/calendar.gif "Calendar")
 
