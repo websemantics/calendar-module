@@ -41,6 +41,8 @@ The stream fields and migration files were created using the following artisan c
 php make:stream 'events:tc(title),title,start:t(anomaly.field_type.datetime),end:t(anomaly.field_type.datetime)' websemantics.module.todo
 ```
 
+Check out the enhanced `make:stream` command [here](https://github.com/websemantics/builder-extension#make-stream).
+
 ## License
 
 [MIT license](http://opensource.org/licenses/mit-license.php)
