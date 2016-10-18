@@ -1,0 +1,184 @@
+/* credits : https://responsivedesign.is/patterns/calendar */
+table.calendar {
+    width: 100%;
+    a {
+        color: @primary;
+        text-decoration: none;
+    }
+    /* weekdays */
+    thead {
+      tr {
+        height: 40px;
+        background: @primary;
+        th {
+            text-align: center;
+            text-transform: uppercase;
+            line-height: 20px;
+            padding: 10px 6px;
+            color: #fff;
+            font-size: 13px;
+            border: 1px solid darken(@primary, 5%);
+        }
+      }
+    }
+    /* days */
+    tbody {
+      tr {
+        td {
+            height: 150px;
+            &.today {
+              background-color: lighten(@primary, 40%);
+              &:hover {
+                background-color: lighten(@primary, 39%);
+              }
+            }
+            &:hover {
+                background: @gray-lightest;
+                & .badge {
+                  background: darken(@gray-lightest, 60%);
+                }
+            }
+        }
+      }
+    }
+    /* generic */
+    tr {
+        padding: 0;
+        margin: 0;
+        width: 100%;
+    }
+    td {
+        vertical-align: top;
+        overflow: hidden;
+        width: 14.342%;
+        padding: 5px;
+        box-sizing: border-box;
+        border: 1px solid @gray-lighter;
+        margin-right: -1px;
+        margin-bottom: -1px;
+        &.other {
+            background: darken(@gray-lightest, 2%);
+            &:hover {
+              background: darken(@gray-lightest, 2%);
+              cursor: not-allowed;
+            }
+        }
+    }
+    .badge {
+        margin-bottom: 15px;
+        min-width: 30px;
+        float: right;
+        font-size: 14px;
+    }
+  /* style checkbox in the form of an event */
+  .c-input.c-checkbox {
+      position: relative;
+      display: block;
+      cursor: pointer;
+      padding: 0px;
+      .btn {
+          position: absolute;
+          top: 3px;
+          right: -100%;
+          padding: 0px 4px;
+          color: @white;
+          border-radius: 0.4rem;
+          font-size: 0.8rem;
+          -webkit-transition: all .3s;
+          transition: all .3s;
+      }
+      .c-indicator {
+        clear: both;
+        position: relative;
+        width:inherit;
+        height:auto;
+        display: block;
+        font-size: 13px;
+        font-weight: normal;
+        border-radius: 4px;
+        padding: 8px;
+        margin: 0px;
+        background: @primary;
+        box-shadow: inset 0 0 0 .12em @primary;
+        color: @white;
+        text-decoration: none;
+        overflow: hidden;
+        &:hover {
+          & .btn {
+            top: 3px;
+            right: 3px;
+          }
+        }
+        &.allday{
+          margin-right:-15px;
+          margin-left:-15px;
+        }
+        &.yesterday{
+          text-align: right;
+          margin-left:-15px;
+        }
+        &.tomorrow{
+          text-align: left;
+          margin-right:-15px;
+        }
+        &.allday:hover .btn, &.tomorrow:hover .btn{
+          right: 14px;
+        }
+      }
+      & + .c-input {
+          margin-left: 0rem;
+      }
+      & > input:focus ~ .c-indicator {
+        background: @primary;
+        box-shadow: inset 0 0 0 .12em @primary;
+        color: @white;
+      }
+      & > input:checked ~ .c-indicator,
+      & > input:checked:focus ~ .c-indicator {
+        background: darken(@primary, 20%);
+        color: @white;
+        font-weight: bold;
+        box-shadow: inset 0 0 0 .12em darken(@primary, 20%);
+        background-image: none;
+      }
+  }
+}
+/* Mobile Responsiveness */
+@media(max-width: 768px) {
+    .table-responsive{
+        border: 0px;
+    }
+    table.calendar {
+        thead tr {
+            display: none;
+        }
+        td {
+            display: block;
+            float: left;
+            height: auto !important;
+            width: 100%;
+            padding: 10px;
+            margin-bottom: -1px;
+            &.other {
+                display: none;
+            }
+        }
+        .badge {
+            float: none;
+            margin-bottom: 10px;
+        }
+        .c-input.c-checkbox {
+          .c-indicator {
+            .btn {
+                padding: 0px 6px;
+                font-size: 1.8rem!important;
+              }
+            font-size: 16px;
+            padding: 12px;
+            &.allday:hover .btn, &.tomorrow:hover .btn{
+              right: 8px;
+            }
+          }
+        }
+    }
+}

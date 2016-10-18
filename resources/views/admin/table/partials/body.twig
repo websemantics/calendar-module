@@ -1,0 +1,54 @@
+{% set first_event = table.rows.first().columns.first().entry %}
+{% set today = carbon('today', config('app.timezone')) %}
+{% set daysInMonth = carbon(first_event.start, config('app.timezone')).daysInMonth %}
+{% set dayOfWeek = carbon(first_event.start, config('app.timezone')).dayOfWeek %}
+{% set current = carbon(first_event.start, config('app.timezone')).startOfMonth() %}
+<tbody>
+  <tr>
+      {# credits : https://gist.github.com/aknosis/3932192 #}
+			{% set dow = dayOfWeek %}
+			{% for day in range(1,daysInMonth) %}
+				{% if loop.first and dayOfWeek != 0 %}
+					<td class="other" colspan="{{ dayOfWeek }}"></td>
+				{% endif %}
+				<td {% if today.day == day %}class="today"{% endif %}>
+					<span class="badge">{{ day }}</span>
+          {% for row in table.rows %}
+            {% set entry = row.columns.first().entry %}
+            {% set start = carbon(entry.start, config('app.timezone')) %}
+            {% set end = carbon(entry.end, config('app.timezone')) %}
+            {% set yesterday = start <= current.startOfDay() %}
+            {% set tomorrow = end >= current.endOfDay() %}
+            {% set allday = yesterday and tomorrow  %}
+            {% if current.between(start.startOfDay(), end.endOfDay()) %}
+
+            <!-- start event -->
+            <label id="{{ loop.index }}" class="c-input c-checkbox">
+                <input type="checkbox" name="{{ row.table.options.prefix }}id[]" value="{{ row.key }}"/>
+                <span class="c-indicator {% if allday %}allday{% else %}{% if yesterday %}yesterday{% endif %}{% if tomorrow %}tomorrow{% endif %}{% endif %}">&nbsp;
+                  {% if allday %}
+                    All Day ({{ start.day }} - {{ end.day }})
+                  {% else %}
+                    {% if not yesterday %}{{ start.format('h:i A') }}{% endif %}{% if not yesterday and not tomorrow %} - {% endif %}{% if not tomorrow %}{{ end.format('h:i A') }}{% endif %}
+                  {% endif %}
+                {{ buttons(row.buttons)|raw }}
+                </span>
+            </label>
+            <!-- end event -->
+            {% endif %}
+          {% endfor %}
+				</td>
+				{% if loop.last and dow != 6 %}
+					<td class="other" colspan="{{ 6 - dow }}">&nbsp;</td>
+				{% endif %}
+				{% if dow == 6 %}
+					{% set dow = 0 %}
+				</tr>
+				<tr>
+				{% else %}
+					{% set dow = dow + 1 %}
+				{% endif %}
+      {% if current.addDay() %}{% endif %}
+			{% endfor %}
+		</tr>
+</tbody>

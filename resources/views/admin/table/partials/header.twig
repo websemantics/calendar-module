@@ -1,0 +1,17 @@
+{% set first_event = table.rows.first().columns.first().entry %}
+<thead>
+  <tr>
+    <th colspan="7" class="center">
+      <h4>{{ first_event.start|date('F Y') }}</h4>
+    </th>
+  </tr>
+  <tr>
+    <th>{{trans('websemantics.module.timetable::calendar.days.monday')}}</th>
+    <th>{{trans('websemantics.module.timetable::calendar.days.tuesday')}}</th>
+    <th>{{trans('websemantics.module.timetable::calendar.days.wednesday')}}</th>
+    <th>{{trans('websemantics.module.timetable::calendar.days.thursday')}}</th>
+    <th>{{trans('websemantics.module.timetable::calendar.days.friday')}}</th>
+    <th>{{trans('websemantics.module.timetable::calendar.days.saturday')}}</th>
+    <th>{{trans('websemantics.module.timetable::calendar.days.sunday')}}</th>
+  </tr>
+</thead>
