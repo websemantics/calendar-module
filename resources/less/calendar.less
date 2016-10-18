@@ -2,14 +2,14 @@
 table.calendar {
     width: 100%;
     a {
-        color: @primary;
+        color: @brand-primary;
         text-decoration: none;
     }
     /* weekdays */
     thead {
       tr {
         height: 40px;
-        background: @primary;
+        background: @brand-primary;
         th {
             text-align: center;
             text-transform: uppercase;
@@ -17,7 +17,7 @@ table.calendar {
             padding: 10px 6px;
             color: #fff;
             font-size: 13px;
-            border: 1px solid darken(@primary, 5%);
+            border: 1px solid darken(@brand-primary, 5%);
         }
       }
     }
@@ -27,9 +27,9 @@ table.calendar {
         td {
             height: 150px;
             &.today {
-              background-color: lighten(@primary, 40%);
+              background-color: lighten(@brand-primary, 40%);
               &:hover {
-                background-color: lighten(@primary, 39%);
+                background-color: lighten(@brand-primary, 39%);
               }
             }
             &:hover {
@@ -98,8 +98,8 @@ table.calendar {
         border-radius: 4px;
         padding: 8px;
         margin: 0px;
-        background: @primary;
-        box-shadow: inset 0 0 0 .12em @primary;
+        background: @brand-primary;
+        box-shadow: inset 0 0 0 .12em @brand-primary;
         color: @white;
         text-decoration: none;
         overflow: hidden;
@@ -129,16 +129,16 @@ table.calendar {
           margin-left: 0rem;
       }
       & > input:focus ~ .c-indicator {
-        background: @primary;
-        box-shadow: inset 0 0 0 .12em @primary;
+        background: @brand-primary;
+        box-shadow: inset 0 0 0 .12em @brand-primary;
         color: @white;
       }
       & > input:checked ~ .c-indicator,
       & > input:checked:focus ~ .c-indicator {
-        background: darken(@primary, 20%);
+        background: darken(@brand-primary, 20%);
         color: @white;
         font-weight: bold;
-        box-shadow: inset 0 0 0 .12em darken(@primary, 20%);
+        box-shadow: inset 0 0 0 .12em darken(@brand-primary, 20%);
         background-image: none;
       }
   }
