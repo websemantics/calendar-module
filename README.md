@@ -19,7 +19,7 @@ This module demonstrates a Calendar view for the [TableBuilder](http://pyrocms.c
 
 To install,
 
-1- Clone this repo inside your project at `app/addons/default/websemantics/calendar-module`,
+1- Clone this repo inside your project at, `addons/default/websemantics/calendar-module`,
 
 ```bash
 git clone https://github.com/websemantics/calendar-module
@@ -28,7 +28,7 @@ git clone https://github.com/websemantics/calendar-module
 2- Install the module
 
 ```bash
-php artisan module:install websemantics.module.calendar-module
+php artisan module:install websemantics.module.calendar
 ```
 
 ## Events Stream

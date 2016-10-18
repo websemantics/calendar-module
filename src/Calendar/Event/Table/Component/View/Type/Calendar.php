@@ -70,7 +70,7 @@ class Calendar extends View
 
   public $assets = [
       'styles.css' => [
-          'websemantics.module.timetable::less/calendar.less',
+          'websemantics.module.calendar::less/calendar.less',
       ]
   ];
 
