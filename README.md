@@ -9,7 +9,7 @@
   Calendar layout for PyroCMS 3 CP Table Builder                                                                         
 
 ```
-> Manage time or it will take over your life. Fight back with timely organized events/actions nicely presented in a Calendar format.
+> Manage time or it will take over your life, yep! Fight back with timely organized events/actions nicely presented in a Calendar format.
 
 ![Calendar](https://github.com/websemantics/calendar-module/raw/master/docs/calendar.gif "Calendar")
 
