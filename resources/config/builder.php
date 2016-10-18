@@ -180,8 +180,8 @@ return [
 
 	'avoid_overwrite' => [
 		'Model.php',
-		'Repository.php'/* ,
-    'TableColumns.php',
+		'Repository.php',
+    'TableBuilder.php'/* ,
     'FormBuilder.php'
     'ModuleSeeder.php' */
 	],
