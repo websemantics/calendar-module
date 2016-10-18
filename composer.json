@@ -1,0 +1,9 @@
+{
+    "name": "websemantics/calendar-module",
+    "type": "streams-addon",
+    "autoload": {
+        "psr-4": {
+            "Websemantics\\CalendarModule\\": "src/"
+        }
+    }
+}
