@@ -15,4 +15,26 @@ class CalendarModuleServiceProvider extends AddonServiceProvider
     protected $bindings = ['Websemantics\CalendarModule\Calendar\Event\EventModel' => 'Websemantics\CalendarModule\Calendar\Event\EventModel'];
     protected $singletons = ['Websemantics\CalendarModule\Calendar\Event\Contract\EventRepositoryInterface' => 'Websemantics\CalendarModule\Calendar\Event\EventRepository'];
 
+    /* 
+     * Get the addon view overrides.
+     *
+     * @return array
+     */
+    public function getOverrides()
+    {
+      $request = app('Illuminate\Http\Request');
+      $view = $request->get('view');
+
+      if ($request->segment(2) === $this->addon->getSlug() &&
+          $view !== 'table') {
+        return [
+          'streams::table/partials/header' => 'websemantics.module.calendar::admin/table/partials/header',
+          'streams::table/partials/body' => 'websemantics.module.calendar::admin/table/partials/body'
+        ];
+      }
+
+      return parent::getOverrides();
+    }
 }
+
+

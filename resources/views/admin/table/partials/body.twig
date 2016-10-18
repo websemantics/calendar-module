@@ -12,7 +12,7 @@
 					<td class="other" colspan="{{ dayOfWeek }}"></td>
 				{% endif %}
 				<td {% if today.day == day %}class="today"{% endif %}>
-					<span class="badge">{{ day }}</span>
+					<span class="badge badge-default">{{ day }}</span>
           {% for row in table.rows %}
             {% set entry = row.columns.first().entry %}
             {% set start = carbon(entry.start, config('app.timezone')) %}
