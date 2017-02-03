@@ -83,7 +83,7 @@ class EventTableBuilder extends TableBuilder
       $entries = $this->table->getEntries();
 
       $entries = $entries->filter(function ($value, $key) use ($user) {
-        return $value->created_by === $user->id;
+        return $value->created_by_id === $user->id;
       });
 
       return $entries;
